@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     // Build Docker image
-                    def appImage = docker.build("myapp:${env.BUILD_ID}")
+                    def appImage = docker.build("mohammed1996/myapp:${env.BUILD_ID}")
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
                 script {
                     docker.withRegistry("${env.DOCKER_REGISTRY_URL}", "${env.DOCKER_CREDENTIALS_ID}") {
                         // Push image to Docker registry
-                        def appImage = docker.image("myapp:${env.BUILD_ID}")
+                        def appImage = docker.image("mohammed1996/myapp:${env.BUILD_ID}")
                         appImage.push("latest")
                         appImage.push("${env.BUILD_ID}")
                     }
