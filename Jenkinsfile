@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         // Define registry and credentials
-        DOCKER_REGISTRY_URL = 'https://registry-1.docker.io/'
+        DOCKER_REGISTRY_URL = ''
         DOCKER_CREDENTIALS_ID = '1996'
     }
     stages {
